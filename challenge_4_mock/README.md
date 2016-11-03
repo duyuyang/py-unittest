@@ -1,13 +1,21 @@
 ### Challenge 4
 In this challenge, you will use Mock to test functions
 
+#### Environment
+- python 2.7
+```
+$ cd challenge_4_mock
+$ virtualenv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+```
 
 #### Why mock?
 ##### Eliminates dependencies
 - isolated unit tests
 
 ```
-def foo(x):
+def foo_0(x):
   y = bar(x)
   if y > 10:
     return x+y
@@ -43,3 +51,10 @@ def foo_3(x):
   else:
     return False
 ```
+
+#### Assert
+- assertEqual
+- mock_a.assert_any_call('arg')
+- mock_b.assert_called_with('arg')
+- mock_c.assert_called_once_with('arg')
+- mock_d.assert_not_called()
