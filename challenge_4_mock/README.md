@@ -1,5 +1,8 @@
 ### Challenge 4
 In this challenge, you will use Mock to test functions
+```
+git clone https://duyuyang@bitbucket.org/duyuyang/ap-dojo-testing.git
+```
 
 #### Environment
 - python 2.7
