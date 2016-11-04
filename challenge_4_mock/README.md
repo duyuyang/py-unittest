@@ -58,3 +58,4 @@ def foo_3(x):
 - mock_b.assert_called_with('arg')
 - mock_c.assert_called_once_with('arg')
 - mock_d.assert_not_called()
+- assertRaises(Exception, lambda: mock_0)

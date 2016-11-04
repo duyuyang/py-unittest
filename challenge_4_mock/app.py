@@ -16,7 +16,7 @@ def foo_2(filename):
   try:
     return parse_large_file(filename)
   except MemoryError:
-    return "boom!"
+    return "Boom!"
 
 def foo_3(x):
   result = requests.get(x)
@@ -24,6 +24,12 @@ def foo_3(x):
     return result.text
   else:
     return False
+
+def foo_4(x):
+    if bar(x) > 10:
+        raise Exception("Boom!")
+    else:
+        return bar(x)
 
 def bar(x):
     pass
