@@ -1,52 +1,41 @@
-import json
 import requests
 
-class Buyahouse(object):
-    def get_next_house(self, user):
-        house = self.get_random_house('sydney')
-        while house in user['house_seen']:
-            house = self.get_random_house('melbourne')
-        return house
+def foo_0(x):
+  y = bar(x)
+  if y > 10:
+    return x+y
+  return x-y
 
+def foo_1(x):
+  if x > 10:
+    bar(x)
+  else:
+    something(x)
 
-    def evaluate(self, houses, budget):
-        if len(houses) == 0:
-            raise Exception("Nothing Available!")
-        for house in houses:
-            try:
-                r = requests.get('http://realestate.com/%s' % house)
-            except ConnectionError:
-                return 'Boom!'
-            info = self.get_house_info(r.text)
-            if self.house_is_undervalued(info):
-                if self.get_price(info) < budget:
-                    self.send_email(house, info)
-                else:
-                    self.add_to_watch_list(house)
+def foo_2(filename):
+  try:
+    return parse_large_file(filename)
+  except MemoryError:
+    return "Boom!"
 
+def foo_3(x):
+  result = requests.get(x)
+  if result.status_code == 200:
+    return result.text
+  else:
+    return False
 
+def foo_4(x):
+    if bar(x) > 10:
+        raise Exception("Boom!")
+    else:
+        return bar(x)
 
-    def get_json(self, filename):
-        try:
-            return json.loads(open(filename).read())
-        except (IOError, ValueError):
-            return "Error"
+def bar(x):
+    pass
 
+def something(x):
+    pass
 
-    def get_house_info(self, text):
-        pass
-
-    def house_is_undervalued(self, info):
-        pass
-
-    def get_price(self, info):
-        pass
-
-    def send_email(self, house, info):
-        pass
-
-    def add_to_watch_list(self, house):
-        pass
-
-    def get_random_house(self, city):
-        pass
+def parse_large_file(filename):
+    pass
